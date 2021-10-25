@@ -16,11 +16,17 @@ for (let index = 0; index < 5; index += 1) {
 window.onload = () => {
   const allPixel = document.querySelectorAll('.pixel');
 
-  for (let pixel of allPixel){
+  for (const pixel of allPixel) {
     pixel.style.backgroundColor = 'white';
   }
+  const colorPalette = document.getElementById('color-palette');
+colorPalette.firstElementChild.classList.add('selected');
 };
 
-const colorPalette = document.getElementById('color-palette');
+let clickColor = document.querySelectorAll('.color');
 
-colorPalette.firstElementChild.classList.add('selected');
+for (let index = 0; index < clickColor.length; index += 1) {
+  if (clickColor[index].className.includes('selected')){
+    clickColor[i].classList.remove('selected')
+  }
+};
