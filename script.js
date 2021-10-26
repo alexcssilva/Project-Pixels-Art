@@ -26,7 +26,11 @@ colorPalette.firstElementChild.classList.add('selected');
 let clickColor = document.querySelectorAll('.color');
 
 for (let index = 0; index < clickColor.length; index += 1) {
-  if (clickColor[index].className.includes('selected')){
-    clickColor[i].classList.remove('selected')
-  }
+  clickColor[index].addEventListener('click', getColor);
+};
+
+function getColor (evento) {
+  let selectColor = document.querySelector('.selected');
+  selectColor.classList.remove('selected');
+  evento.target.classList.add('selected');
 };
