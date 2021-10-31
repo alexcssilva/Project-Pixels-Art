@@ -42,7 +42,7 @@ let selectColor = 'black';
 for (let color of clickColor) {
   color.addEventListener('click', function (element) {
     selectColor = element.target.id;
-  })
+  });
 }
 
 let pixelColors = document.querySelectorAll('.pixel');
