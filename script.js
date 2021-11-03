@@ -23,11 +23,7 @@ window.onload = () => {
   colorPalette.firstElementChild.classList.add('selected');
 };
 
-let clickColor = document.querySelectorAll('.color');
-
-for (let index = 0; index < clickColor.length; index += 1) {
-  clickColor[index].addEventListener('click', getColor);
-}
+const clickColor = document.querySelectorAll('.color');
 
 /* Desafio concluido e resolvido em grupo
 pelo os alunos George Lucas - Turma 17, Abner Sousa - Turma 17, Gabriel Medeiros, Joao Keuwe - Turma -17 */
@@ -36,19 +32,25 @@ function getColor(evento) {
   classSelect.classList.remove('selected');
   evento.target.classList.add('selected');
 }
+// -----------------------------------------------------------------------------------------------------------
+
+for (let index = 0; index < clickColor.length; index += 1) {
+  clickColor[index].addEventListener('click', getColor);
+}
+
 
 let selectColor = 'black';
 
-for (let color of clickColor) {
-  color.addEventListener('click', function (element) {
+for (const color of clickColor) {
+  color.addEventListener('click', (element) => {
     selectColor = element.target.id;
   });
 }
 
-let pixelColors = document.querySelectorAll('.pixel');
+const pixelColors = document.querySelectorAll('.pixel');
 
-for (let pixels of pixelColors) {
-  pixels.addEventListener('click', function (elementPixel) {
-    elementPixel.target.style.backgroundColor = selectColor;
+for (const pixels of pixelColors) {
+  pixels.addEventListener('click', (element) => {
+    element.target.style.backgroundColor = selectColor;
   });
 }
