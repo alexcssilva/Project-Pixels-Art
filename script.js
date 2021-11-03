@@ -38,7 +38,6 @@ for (let index = 0; index < clickColor.length; index += 1) {
   clickColor[index].addEventListener('click', getColor);
 }
 
-
 let selectColor = 'black';
 
 for (const color of clickColor) {
@@ -54,3 +53,13 @@ for (const pixels of pixelColors) {
     element.target.style.backgroundColor = selectColor;
   });
 }
+
+const btnClear = document.querySelector('#clear-board');
+
+btnClear.addEventListener('click', (event) => {
+  const divWhite = document.querySelectorAll('.pixel');
+
+  for (const i = 0; i < divWhite.length; i += 1) {
+    divWhite[i].style.backgroundColor = 'white';
+  }
+});
