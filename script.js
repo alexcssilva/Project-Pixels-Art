@@ -41,25 +41,25 @@ for (let index = 0; index < clickColor.length; index += 1) {
 let selectColor = 'black';
 
 for (const color of clickColor) {
-  color.addEventListener('click', (element) => {
-    selectColor = element.target.id;
+  color.addEventListener('click', (event) => {
+    selectColor = event.target.id;
   });
 }
 
 const pixelColors = document.querySelectorAll('.pixel');
 
 for (const pixels of pixelColors) {
-  pixels.addEventListener('click', (element) => {
-    element.target.style.backgroundColor = selectColor;
+  pixels.addEventListener('click', (event) => {
+    event.target.style.backgroundColor = selectColor;
   });
 }
 
 const btnClear = document.querySelector('#clear-board');
 
-btnClear.addEventListener('click', (event) => {
+btnClear.addEventListener('click', () => {
   const divWhite = document.querySelectorAll('.pixel');
 
-  for (const i = 0; i < divWhite.length; i += 1) {
+  for (let i = 0; i < divWhite.length; i += 1) {
     divWhite[i].style.backgroundColor = 'white';
   }
 });
